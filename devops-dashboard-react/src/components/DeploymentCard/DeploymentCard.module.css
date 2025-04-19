@@ -1,0 +1,99 @@
+.deploymentList {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.deploymentItem {
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-left: 4px solid transparent;
+}
+
+.deploymentHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.deploymentMeta {
+  display: flex;
+  flex-direction: column;
+}
+
+.deploymentService {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.deploymentEnv {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  padding: 2px 6px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.deploymentTime {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  text-align: right;
+}
+
+.deploymentDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deploymentVersion {
+  font-family: monospace;
+  font-size: 0.9rem;
+  padding: 2px 8px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.deploymentStatus {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+/* Status styles */
+.success {
+  border-left-color: #28a745;
+}
+
+.failed {
+  border-left-color: #dc3545;
+}
+
+.warning {
+  border-left-color: #ffc107;
+}
+
+.inProgress {
+  border-left-color: #17a2b8;
+}
+
+/* Icon colors */
+.successIcon {
+  color: #28a745;
+}
+
+.failedIcon {
+  color: #dc3545;
+}
+
+.warningIcon {
+  color: #ffc107;
+}
+
+.inProgressIcon {
+  color: #17a2b8;
+} 

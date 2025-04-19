@@ -6,6 +6,12 @@ import CpuCard from './components/CpuCard/CpuCard';
 import MemoryCard from './components/MemoryCard/MemoryCard';
 import AlertsCard from './components/AlertsCard/AlertsCard';
 import DiskCard from './components/DiskCard/DiskCard';
+import NetworkCard from './components/NetworkCard/NetworkCard';
+// Import new cards
+import ServiceStatusCard from './components/ServiceStatusCard/ServiceStatusCard';
+import DeploymentCard from './components/DeploymentCard/DeploymentCard';
+import LogErrorsCard from './components/LogErrorsCard/LogErrorsCard';
+import PerformanceCard from './components/PerformanceCard/PerformanceCard';
 
 import './index.css'; // Import global styles
 
@@ -26,11 +32,20 @@ function App() {
       <Header currentTheme={theme} toggleTheme={toggleTheme} />
       
       <DashboardGrid>
+        {/* Row 1: System resources */}
         <CpuCard />
         <MemoryCard />
         <DiskCard />
+        <NetworkCard />
+        
+        {/* Row 2: Service health and performance */}
+        <PerformanceCard />
+        <ServiceStatusCard />
+        
+        {/* Row 3: Operational data */}
+        <DeploymentCard />
+        <LogErrorsCard />
         <AlertsCard />
-        {/* Add more cards here later */}
       </DashboardGrid>
     </div>
   );

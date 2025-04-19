@@ -10,6 +10,11 @@
   }
 }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .card {
     background: var(--card-bg);
     padding: 20px;
@@ -25,16 +30,50 @@
     /* Add more card styles if needed */
 }
 
+.cardHeader {
+    margin-bottom: 15px;
+}
+
 .card h2 {
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 1.2em;
     border-bottom: 1px solid var(--text-color);
     padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cardIcon {
+    font-size: 1.1em;
+    opacity: 0.8;
 }
 
 .content {
     /* Styles for the content area within the card */
+    min-height: 100px;
+    position: relative;
+}
+
+.loadingContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingSpinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--text-color);
+    animation: spin 1s ease-in-out infinite;
 }
 
 .metric {
@@ -42,4 +81,210 @@
     font-weight: bold;
     text-align: center;
     margin-top: 10px;
+}
+
+/* Styles for Network Card Text */
+.networkValues {
+    display: flex;
+    justify-content: space-around; /* Space out sent/received */
+    align-items: center;
+    margin-top: 15px;
+    flex-wrap: wrap; /* Wrap if screen is too small */
+    gap: 10px;
+}
+
+.networkValues .metric {
+    font-size: 1.1em; /* Slightly smaller for network values */
+    margin-top: 0;
+    display: flex; /* Align arrow and text */
+    align-items: center;
+    gap: 5px; /* Space between arrow and text */
+}
+
+.arrowUp, .arrowDown {
+    font-size: 1.2em;
+}
+
+.arrowUp {
+    color: rgb(255, 99, 132); /* Match sent color */
+}
+
+.arrowDown {
+    color: rgb(54, 162, 235); /* Match received color */
+}
+
+/* Service Status Card Styles */
+.servicesList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.serviceItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 0;
+}
+
+.serviceName {
+    font-weight: 500;
+}
+
+.statusHealthy {
+    color: #4CAF50; /* Green */
+    font-size: 1.2em;
+}
+
+.statusWarning {
+    color: #FF9800; /* Amber */
+    font-size: 1.2em;
+}
+
+.statusError {
+    color: #F44336; /* Red */
+    font-size: 1.2em;
+}
+
+.statusUnknown {
+    color: #9E9E9E; /* Grey */
+    font-size: 1.2em;
+}
+
+/* Deployment Card Styles */
+.deploymentList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 165px;
+    overflow-y: auto;
+}
+
+.deploymentItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.deploymentSuccess {
+    border-left: 3px solid #4CAF50;
+}
+
+.deploymentFailed {
+    border-left: 3px solid #F44336;
+}
+
+.deploymentInProgress {
+    border-left: 3px solid #2196F3;
+}
+
+/* Log Errors Card Styles */
+.errorsList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 165px;
+    overflow-y: auto;
+}
+
+.errorItem {
+    padding: 8px 10px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.05);
+    margin-bottom: 6px;
+}
+
+.errorHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.errorService {
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.errorTime {
+    font-size: 0.75em;
+    opacity: 0.7;
+}
+
+.errorInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.errorType {
+    font-size: 0.85em;
+}
+
+.errorCount {
+    font-size: 0.8em;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.noErrors {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.severityCritical {
+    border-left: 3px solid #F44336;
+}
+
+.severityWarning {
+    border-left: 3px solid #FF9800;
+}
+
+.severityInfo {
+    border-left: 3px solid #2196F3;
+}
+
+/* Performance Card Styles */
+.performanceContainer {
+    height: 165px;
+}
+
+.responseTime {
+    font-size: 2.2em;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.responseLabel {
+    font-size: 0.9em;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.performanceStats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.statItem {
+    text-align: center;
+}
+
+.statValue {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.statLabel {
+    font-size: 0.8em;
+    opacity: 0.8;
 } 
