@@ -12,6 +12,7 @@ import ServiceStatusCard from './components/ServiceStatusCard/ServiceStatusCard'
 import DeploymentCard from './components/DeploymentCard/DeploymentCard';
 import LogErrorsCard from './components/LogErrorsCard/LogErrorsCard';
 import PerformanceCard from './components/PerformanceCard/PerformanceCard';
+import SecurityCard from './components/SecurityCard/SecurityCard';
 
 import './index.css'; // Import global styles
 
@@ -41,6 +42,7 @@ function App() {
         {/* Row 2: Service health and performance */}
         <PerformanceCard />
         <ServiceStatusCard />
+        <SecurityCard />
         
         {/* Row 3: Operational data */}
         <DeploymentCard />
