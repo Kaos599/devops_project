@@ -12,18 +12,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Lint HTML
-        uses: htmlhint/htmlhint-action@v1
-
       - name: Lint CSS
         uses: stylelint/action@v1
         with:
           files: "**/*.css"
 
-      - name: Lint JS
+      - name: Lint Code
         uses: github/super-linter@v4
         env:
           VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_HTML: true
 
       - name: Lighthouse Audit
         uses: treosh/lighthouse-ci-action@v9
