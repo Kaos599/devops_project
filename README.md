@@ -2,8 +2,9 @@
 # 🚀 DevOps Monitoring Dashboard
 
 A modern, responsive DevOps Monitoring Dashboard built with **React.js**. This dashboard visualizes critical system metrics (CPU, memory, disk, network, API performance, security, deployments, and alerts) and integrates a full CI/CD pipeline using **GitHub Actions** for automated testing and deployment to AWS S3 or Netlify.
+![Screenshot 2025-04-19 185107](https://github.com/user-attachments/assets/57ef8826-e796-4070-bb18-5423628386fe)
 
-![DevOps Monitoring Dashboard Screenshot](https://pplx-res.cloudinary.com/image/private/user_uploads/anUaTtzShJsMfDb/file_2025-04-19_13.21.18.jpg)
+
 
 ---
 
