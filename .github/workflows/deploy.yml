@@ -1,11 +1,12 @@
-name: Deploy to Netlify
+name: Deploy DevOps Dashboard
 
 on:
   push:
     branches: [ "main" ]
+  pull_request:
 
 jobs:
-  build-and-deploy:
+  test-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -13,14 +14,29 @@ jobs:
 
       - name: Lint HTML
         uses: marketplace.actions/htmlhint@v1
+
+      - name: Lint CSS
+        uses: stylelint/action@v1
         with:
-          files: "**/*.html"  # Lint all HTML files
+          files: "**/*.css"
+
+      - name: Lint JS
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_JAVASCRIPT_ES: true
+
+      - name: Lighthouse Audit
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          urls: |
+            https://your-netlify-site.netlify.app
+          uploadArtifacts: true
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
+        if: github.ref == 'refs/heads/main'
         with:
           publish-dir: ./
-          production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
           netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
