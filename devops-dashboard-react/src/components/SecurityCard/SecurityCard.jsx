@@ -50,6 +50,7 @@ function SecurityCard() {
     };
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     setLoading(true);
     
