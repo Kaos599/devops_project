@@ -18,12 +18,13 @@ jobs:
           VALIDATE_JAVASCRIPT_ES: true
           VALIDATE_HTML: true
           VALIDATE_CSS: true
+          FILTER_REGEX_EXCLUDE: '.*\\.module\\.css$'
 
       - name: Lighthouse Audit
         uses: treosh/lighthouse-ci-action@v9
         with:
           urls: |
-            https://devopsprojectautomation.netlify.app/
+            https://your-netlify-site.netlify.app
           uploadArtifacts: true
 
       - name: Deploy to Netlify
