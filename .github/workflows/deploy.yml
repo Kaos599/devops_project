@@ -16,7 +16,7 @@ jobs:
         uses: treosh/lighthouse-ci-action@v9
         with:
           urls: |
-            https://your-netlify-site.netlify.app
+            https://devopsprojectautomation.netlify.app/
           uploadArtifacts: true
 
       - name: Deploy to Netlify
