@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px; /* Add some space below header */
+    border-bottom: 1px solid var(--text-color); /* Optional separator */
+    margin-bottom: 20px; /* Space between header and grid */
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.8em; /* Adjust as needed */
+}
+
+.headerControls {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between badge and button */
+}
+
+.ciBadge {
+    height: 25px; /* Adjust size */
+}
+
+.themeToggle {
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.themeToggle:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+} 

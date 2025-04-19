@@ -1,0 +1,45 @@
+/* Add Keyframes for animation */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    
+    /* Apply animation */
+    opacity: 0; /* Start hidden */
+    animation: fadeInSlideUp 0.5s ease-out forwards;
+    /* Add a staggered delay maybe? animation-delay: calc(0.1s * var(--card-index, 0)); */
+    /* Add more card styles if needed */
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    border-bottom: 1px solid var(--text-color);
+    padding-bottom: 10px;
+}
+
+.content {
+    /* Styles for the content area within the card */
+}
+
+.metric {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+} 

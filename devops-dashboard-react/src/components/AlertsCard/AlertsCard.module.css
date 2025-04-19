@@ -1,0 +1,37 @@
+@keyframes fadeAndSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.alertsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px; /* Limit height if list grows */
+    overflow-y: auto; /* Add scroll if needed */
+}
+
+/* Apply to the li element */
+.alertItem {
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--text-color);
+    opacity: 0.8;
+    font-size: 0.9em;
+    /* Animation for new items */
+    animation: fadeAndSlideIn 0.4s ease-out forwards;
+}
+
+.alertsList li:last-child {
+    border-bottom: none;
+}
+
+.alertStatus {
+    margin-right: 10px;
+    font-size: 1.1em;
+} 
