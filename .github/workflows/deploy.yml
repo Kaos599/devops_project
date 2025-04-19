@@ -13,7 +13,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Lint HTML
-        uses: marketplace.actions/htmlhint@v1
+        uses: htmlhint/htmlhint-action@v1
+        with:
+          files: "**/*.html"
 
       - name: Lint CSS
         uses: stylelint/action@v1
