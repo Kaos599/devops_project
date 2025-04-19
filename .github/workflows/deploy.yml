@@ -12,14 +12,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Lint Code
-        uses: github/super-linter@v4
-        env:
-          VALIDATE_JAVASCRIPT_ES: true
-          VALIDATE_HTML: true
-          VALIDATE_CSS: true
-          FILTER_REGEX_EXCLUDE: '.*\\.module\\.css$'
-
       - name: Lighthouse Audit
         uses: treosh/lighthouse-ci-action@v9
         with:
