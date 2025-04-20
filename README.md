@@ -6,8 +6,7 @@ A modern, responsive DevOps Monitoring Dashboard built with **React.js**. This d
 
 
 ## ☁️ Deployed Link
-You can test it out by clicking mon the following link: https://devopsprojectautomation.netlify.app/
-
+You can test it out by clicking on the following link: https://devopsprojectautomation.netlify.app/
 
 ---
 
