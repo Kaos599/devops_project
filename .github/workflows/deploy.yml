@@ -19,11 +19,20 @@ jobs:
             https://devopsprojectautomation.netlify.app/
           uploadArtifacts: true
 
+      - name: Install dependencies
+        working-directory: devops-dashboard-react
+        run: npm install
+
+      - name: Build site
+        working-directory: devops-dashboard-react
+        run: npm run build
+
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
         if: github.ref == 'refs/heads/main'
         with:
-          publish-dir: ./
+          publish-dir: devops-dashboard-react/dist
+          functions-dir: devops-dashboard-react/netlify/functions
           github-token: ${{ secrets.GITHUB_TOKEN }}
           netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
