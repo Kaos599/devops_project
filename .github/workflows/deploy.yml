@@ -17,7 +17,13 @@ jobs:
         with:
           urls: |
             https://devopsprojectautomation.netlify.app/
-          uploadArtifacts: true
+          uploadArtifacts: false
+
+      - name: Upload Lighthouse Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse_results
+          path: ./.lighthouseci
 
       - name: Install dependencies
         working-directory: devops-dashboard-react
